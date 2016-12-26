@@ -117,7 +117,7 @@ local function banall_by_reply(extra, success, result)
 	end
 		banall_user(result.from.peer_id)
 		send_large_msg(chat, "User "..result.from.peer_id.." Golobally Banned")
-		send_large_msg(channel, "><i> دسترسی کاربر برای ورود به تمامی گروه های ربات </i> [ @TGSecurityBOT ] <i> مسدود شد </i>\n><i> شناسه کاربری: </i> [<b>"..result.from.peer_id.."</b>]")
+		send_large_msg(channel, "><i> دسترسی کاربر برای ورود به تمامی گروه های ربات </i> [ @Maximus_PLUS ] <i> مسدود شد </i>\n><i> شناسه کاربری: </i> [<b>"..result.from.peer_id.."</b>]")
 	else
 		return
 	end
@@ -135,12 +135,12 @@ local function unbanall_by_reply(extra, success, result)
 		return
 	end
      if not is_gbanned(result.from.peer_id) then
-       return '><i> کاربر مورد نظر در لیست مسدودیت دائمی ربات </i> [ @TGSecurityBOT ] <i> قرار ندارد </i>\n><i> شناسه کاربری: </i> [<b>'..result.from.peer_id..'</b>]'
+       return '><i> کاربر مورد نظر در لیست مسدودیت دائمی ربات </i> [ @Maximus_PLUS ] <i> قرار ندارد </i>\n><i> شناسه کاربری: </i> [<b>'..result.from.peer_id..'</b>]'
       end
 	  if is_gbanned(result.from.peer_id) then
 		unbanall_user(result.from.peer_id)
 		send_large_msg(chat, "User "..result.from.peer_id.." Golobally un-Banned")
-		send_large_msg(channel, "><i> کاربر مورد نظر در لیست مسدودیت دائمی ربات </i> [ @TGSecurityBOT ] <i> قرار ندارد </i>\n><i> شناسه کاربری: </i> [<b>"..result.from.peer_id.."</b>]")
+		send_large_msg(channel, "><i> کاربر مورد نظر در لیست مسدودیت دائمی ربات </i> [ @Maximus_PLUS] <i> قرار ندارد </i>\n><i> شناسه کاربری: </i> [<b>"..result.from.peer_id.."</b>]")
 	end
 	end
 end
