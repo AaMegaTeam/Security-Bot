@@ -53,16 +53,6 @@ local function run(msg, matches)
 		local text = '<i> 》کاربر </i> [<b>'..msg.from.first_name..'</b>] <i> به دلیل استفاده از کارکتر های طولانی در نام اکانت کاربری خود قادر به نمایش اطلاعات شما نیستم </i>'
 return reply_msg(msg.id, text, ok_cb, false)
 end
-	local file = io.open("./info/"..msg.from.id..".txt", "r")
-		--if file ~= nil then
-		if not file then
-	local text = "<i> >کاربر </i> {<b>"..msg.from.first_name.."</b>}\n<i> ابتدا نیاز به تایید حساب کاربری خوددارید </i>\n<i> > برای تکمیل فرایند عضویت روی عبارت زیر کلیک کنید </i>\n> /activation"
-	return reply_msg(msg.id, text, ok_cb, false)
-	end
-if string.find(msg.from.username , 'A_P_P_L_E') or string.find(msg.from.username , 'ValtMan') or string.find(msg.from.username , 'Apple_VPN') or string.find(msg.from.username , 'booodit') or string.find(msg.from.username , 'Kiarashlua') then
-local text = '<i> >متاسفم.شما از بخش دریافت اطلاعات خود مسدود هستید! </i> \n<i> >برای رفع مشکل با مدیریت ارتباط برقرار کنید </i>'
-return reply_msg(msg.id, text, ok_cb, false)
-end
 	   userrank = "Member"
 	if tonumber(msg.from.id) == 159887854 then
 		userrank = "Master ⭐⭐⭐⭐"
