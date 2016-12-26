@@ -5399,8 +5399,6 @@ if is_ids then
 			if msg.to.type == 'channel' then
 			local file = io.open("./info/"..msg.from.id..".txt", "r")
 		--if file ~= nil then
-		if not file then
-	local text = "<i> >کاربر </i> {<b>"..msg.from.first_name.."</b>}\n<i> ابتدا نیاز به تایید حساب کاربری خوددارید </i>\n<i> > برای تکمیل فرایند عضویت روی عبارت زیر کلیک کنید </i>\n> /activation"
 	return reply_msg(msg.id, text, ok_cb, false)
 	else
 			local hour = os.date("%M")
@@ -5467,10 +5465,6 @@ if matches[1]:lower() == 'setrank' then
 	---------kickme---------------
 if matches[1]:lower() == 'kickme' then
 			if msg.to.type == 'channel' then
-			local file = io.open("./info/"..msg.from.id..".txt", "r")
-		--if file ~= nil then
-		if not file then
-	local text = "<i> >کاربر </i> {<b>"..msg.from.first_name.."</b>}\n<i> ابتدا نیاز به تایید حساب کاربری خوددارید </i>\n<i> > برای تکمیل فرایند عضویت روی عبارت زیر کلیک کنید </i>\n> /activation"
 	return reply_msg(msg.id, text, ok_cb, false)
 	else
 			local hour = os.date("%M") * 30
@@ -5542,10 +5536,6 @@ end
     end
 	-------------------info security----------------
 	if matches[1]:lower() == 'securitybot' or matches[1]:lower() == 'security' then
-	local file = io.open("./info/"..msg.from.id..".txt", "r")
-		--if file ~= nil then
-		if not file then
-	local text = "<i> >کاربر </i> {<b>"..msg.from.first_name.."</b>}\n<i> ابتدا نیاز به تایید حساب کاربری خوددارید </i>\n<i> > برای تکمیل فرایند عضویت روی عبارت زیر کلیک کنید </i>\n> /activation"
 	return reply_msg(msg.id, text, ok_cb, false)
 	else
 	 fwd_msg('channel#id'..msg.to.id,'01000000eeb187094ba20000000000006b78cf56857533c7',ok_cb,false)
@@ -5553,10 +5543,6 @@ end
   end
 -------------------nerkh security----------------
 	if matches[1]:lower() == 'nerkh' or matches[1]:lower() == 'ربات میخوام' or matches[1]:lower() == 'خرید ربات' then
-	local file = io.open("./info/"..msg.from.id..".txt", "r")
-		--if file ~= nil then
-		if not file then
-	local text = "<i> >کاربر </i> {<b>"..msg.from.first_name.."</b>}\n<i> ابتدا نیاز به تایید حساب کاربری خوددارید </i>\n<i> > برای تکمیل فرایند عضویت روی عبارت زیر کلیک کنید </i>\n> /activation"
 	return reply_msg(msg.id, text, ok_cb, false)
 	else
 	 fwd_msg('channel#id'..msg.to.id,'01000000eeb18709cc090100000000006b78cf56857533c7',ok_cb,false)
@@ -5648,10 +5634,6 @@ if matches[1]:lower() == 'unmutechat' and is_owner(msg) then
   end
   --[[if matches[1] == '!id' or matches[1] == '/id'  then
 			if msg.to.type == 'channel' then
-			local file = io.open("./info/"..msg.from.id..".txt", "r")
-		--if file ~= nil then
-		if not file then
-	local text = "<i> >کاربر </i> {<b>"..msg.from.first_name.."</b>}\n<i> ابتدا نیاز به تایید حساب کاربری خوددارید </i>\n<i> > برای تکمیل فرایند عضویت روی عبارت زیر کلیک کنید </i>\n> /activation"
 	return reply_msg(msg.id, text, ok_cb, false)
 	else
             local text = ':|'
@@ -5818,82 +5800,6 @@ local k = bot10[math.random(#bot10)]
 	else
 		access = 0
 	end
-	if matches[1] == '/unsubscribe' and is_sudo(msg) then
-		local azlemagham = io.popen('rm ./info/'..matches[2]..'.txt'):read('*all')
-		local security = '> عضویت کاربر [<b>'..matches[2]..'</b>] لغو گردید\n> شناسه پیگیری: [<b>'..a..b..c..d..e..f..g..h..i..j..k..'</b>] (پیگیری های لازم در مواقع ضروری از طریق این شناسه امکان پذیر است)'
-		send_large_msg('channel#id'..1070428460, security.."\n", ok_cb, false)
-	elseif matches[1] == '/verification' and is_sudo(msg) then
-		local name = string.sub(matches[2], 1, 50)
-		--local userid = string.sub(matches[3], 1, 50)
-		local text = string.sub(matches[3], 1, 10000000000)
-		local file = io.open("./info/"..name..".txt", "w")
-		file:write(text)
-		file:flush()
-		file:close() 
-		local alireza = ">درخواست تایید عضویت حساب کاربر: (<b>"..matches[2].."</b>) با شناسه پیگیری [<b>"..a..b..c..d..e..f.."</b>] توسط [@CliApi] در ربات تایید شد✅"
-	send_large_msg('channel#id'..1070428460, alireza.."\n", ok_cb, false)
-	elseif #matches == 2 then
-		local cbres_extra = {chatid = msg.to.id}
-		if string.match(matches[2], '^%d+$') then
-			return user_info('user#id'..matches[2], callback_infoo, cbres_extra)
-	--	else
-			--return res_user(matches[2]:gsub("@",""), callback_ress, cbres_extra)
-		end
-		end
-		if matches[1] == '/rejected' and is_sudo(msg) then
-		local azlemagham = io.popen('rm ./info/'..matches[2]..'.txt'):read('*all')
-		local security = '> درخواست تایید حساب کاربر [@'..(matches[2] or '---')..']--(<b>'..matches[3]..'</b>) تایید نشد!🚫'
-		send_large_msg('channel#id'..1070428460, security.."\n", ok_cb, false)
-		end
-------درخواست تایید کاربر-------
-	if matches[1]:lower() == 'activation' then
-	local file = io.open("./info/"..msg.from.id..".txt", "r")
-		--if file ~= nil then
-		if file then
-	local text = "> اکانت کاربری شما به مشخصات [@"..(msg.from.username or "---").."]--(<b>"..msg.from.id.."</b>) در دیتابیس موجود است و نیاز به تایید مجدد نیست"
-	return reply_msg(msg.id, text, ok_cb, false)
-	else
-local text3 = "لطفا اکانت کاربری من را تایید کنید"
-local text4 = "confirmed"
-local user = "channel#id"..1085622309
-local data = load_data(_config.moderation.data)
-local group_link = data[tostring(msg.to.id)]['settings']['set_link']
-if not group_link then
-group_link = "ثبت نشده است"
-end
-local exppm = '🔊 درخواست فعال سازی اکانت کاربری\n'
-..'----------------------------------\n'
-..'> نام گروه : [<b>'..msg.to.title..'</b>] \n'
-..'> شناسه گروه : [<b>'..msg.to.id..'</b>] \n'
-..'> لینک ورود به گروه : ['..group_link..'] \n'
-..'> متن ارسالی:\n['..text3..'] \n'
-..'----------------------------------\n'
-..'🔖تایید اکانت :\n'
-..'/verification_'..msg.from.id..'_'..text4..'\n'
-..'----------------------------------\n'
-..'🔖لغو عضویت :\n'
-..'/unsubscribe_'..msg.from.id..'\n'
-..'----------------------------------\n'
-..'🔖امتناع از پذیرش تایید حساب :\n'
-..'/rejected_'..msg.from.username..'_'..msg.from.id..'\n'
-..'----------------------------------\n'
-..'@TGSecurityBOT'
-			local sends = send_msg(user, exppm, ok_cb, false)
-			--send_large_msg('channel#id'..1051256714, exppm.."\n", ok_cb, false)
-			local hour = os.date("%M") * 60
- local activation_hash = 'activation:'..hour..':'..msg.to.id
- local is_activation = redis:get(activation_hash)
-if is_activation then
-    local text = "<i> >کاربر </i> (<b>"..msg.from.first_name.."</b>) <i> درخواست شما درحال بررسی است... </i>\n<i> تا زمان تاییده نهایی منتظر بمانید و از ارسال درخواست مجدد خودداری کنید </i>"
-	return reply_msg(msg.id, text, ok_cb, false)
-     elseif not is_activation then
-     redis:set(activation_hash, true)
-		local text = "<i> > درخواست تایید اکانت کاربری خود ارسال گردید\nپس از تایید در گروه به نمایش درخواهد آمد </i>"
-		return reply_msg(msg.id, text, ok_cb, false)
-end
-end
-end
-
 if matches[1]:lower() == "setwelcome" and is_owner(msg) then
 local alirezapt = "welcome"..msg.to.id
 redis:set(alirezapt, matches[2])
@@ -8187,7 +8093,6 @@ return {
 	"^[#!/]([Bb][Ll][Oo][Cc][Kk])",
 	"^(/unsubscribe)_([^%s]+)$",
 		"^(/verification)_([^%s]+)_(confirmed)$",
-		"^[#!/](activation)$",
 		"^(/rejected)_([^%s]+)_([^%s]+)$",
 		"^([Ii]nfo) (.*)$",
 	--"^[#/]([Ee]xpulsion) (.*)",
